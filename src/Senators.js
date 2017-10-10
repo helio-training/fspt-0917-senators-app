@@ -4,7 +4,16 @@ import SenatorsData from './data/senators.json'
 class Senators extends Component {
     render() {
         return (
-            <div>Show the Sentors here...</div>
+            <div>
+                <div>
+                    <h1>Democrats</h1>
+                {SenatorsData.filter((senator) => {
+                return senator.party === 'Democrat'
+            }).map((senator)=> {
+                    return (
+                        <div>{senator.party + senator.person.name + senator.startdate}</div>
+            )})}</div>
+               </div>
         )
     }
 }  
