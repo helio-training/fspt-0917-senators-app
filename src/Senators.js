@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SenatorsData from './data/senators.json'
+import SenatorComponent from './SenatorComponent'
 
 class Senators extends Component {
     render() {
@@ -8,12 +9,12 @@ class Senators extends Component {
                 <div>
                     <h1>Democrats</h1>
                 {SenatorsData.filter((senator) => {
-                return senator.party === 'Democrat'
-            }).map((senator)=> {
-                    return (
-                        <div>{senator.party + senator.person.name + senator.startdate}</div>
-            )})}</div>
-               </div>
+                    return senator.party === 'Democrat'
+                }).map((senator)=> {
+                        return (
+                            <SenatorComponent senatorData={senator} />
+                        )})}</div>
+                </div>
         )
     }
 }  
